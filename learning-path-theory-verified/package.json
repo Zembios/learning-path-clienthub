@@ -1,0 +1,41 @@
+{
+  "name": "learning-path",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "test:unit1": "jest units/unit-01-js-foundations",
+    "test:unit2": "jest units/unit-02-async-modules",
+    "test:unit3": "jest units/unit-03-typescript-foundations",
+    "test:unit4": "jest units/unit-04-react-basics",
+    "test:unit5": "jest units/unit-05-react-advanced",
+    "test:unit6": "jest units/unit-06-aggrid-essentials",
+    "test:unit7": "jest units/unit-07-formik-yup",
+    "test:unit8": "jest units/unit-08-mui-essentials",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@babel/core": "^7",
+    "@babel/preset-env": "^7",
+    "@babel/preset-react": "^7",
+    "@testing-library/jest-dom": "^6",
+    "@testing-library/react": "^16",
+    "@testing-library/user-event": "^14",
+    "babel-jest": "^29",
+    "jest": "^29",
+    "jest-environment-jsdom": "^29",
+    "ts-jest": "^29",
+    "typescript": "^5",
+    "whatwg-fetch": "^3"
+  },
+  "dependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "formik": "^2",
+    "yup": "^1",
+    "@mui/material": "^6",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "ag-grid-community": "^32",
+    "ag-grid-react": "^32"
+  }
+}

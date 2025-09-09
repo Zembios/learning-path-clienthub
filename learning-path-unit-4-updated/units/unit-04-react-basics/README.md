@@ -1,0 +1,15 @@
+# Unit 4 – React Basics
+
+**Implement the unit task** in: `./src/task/PeopleList.jsx`  
+**Run tests:** `npm install && npm run test:unit4`
+
+This unit also includes per-topic exercises under `./topics/` (each topic has its own `theory+task.md`, `src/solution.jsx`/`.js`, and tests).
+
+## How to run only this unit's tests
+From the project root (where `package.json` is), run:
+```bash
+npm install
+npm run test:unit4
+```
+
+Jest is configured to look under `./units/unit-04-react-basics`.

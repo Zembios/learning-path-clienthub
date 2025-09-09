@@ -1,0 +1,11 @@
+{
+  "name": "learning-path-unit1",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "test:unit1": "jest unit-01-js-foundations"
+  },
+  "devDependencies": {
+    "jest": "^29"
+  }
+}
