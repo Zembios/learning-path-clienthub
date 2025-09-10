@@ -16,10 +16,11 @@ Conditionally showing/hiding content is a core UI skill.
     :
     (<Box sx={/* some other styles... */}>{someOtherContent}</Box>)
 }
+```
 ---
 
 ## Topic Task — **StatusBadge**
-Render `"Active"` in a `<span>` with `data-testid="badge"` when `active` prop is true; otherwise `"Inactive"`.
+This topic doesn't have a task for implementation. You can check out a practical example of conditional rendering in the solution.jsx file.
 
 **Where to implement:** `./src/solution.jsx`  
 **How to verify:** `npm run test:unit4`

@@ -29,7 +29,6 @@ useEffect(()=>{
 ---
 
 ## Topic Task — **MountLogger**
-Log `"mounted"` on mount and `"unmounted"` on unmount using `useEffect`.
+This topic does not have a task to implement. However, it does have an example you can try out to see how the lifecycle events fire.
 
-**Where to implement:** `./src/solution.jsx`  
-**How to verify:** `npm run test:unit4`
+**Check out the example:** `./src/solution.jsx`  

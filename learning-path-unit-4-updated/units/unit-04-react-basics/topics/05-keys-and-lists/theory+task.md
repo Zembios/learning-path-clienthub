@@ -18,7 +18,10 @@ items.map(i => <Row key={`${i.type}:${i.id}`} item={i} />);
 ---
 
 ## Topic Task — **buildKey(item)**
-Return a unique key for an item with shape `{ id: string|number, type?: string }` as `type ? \`\${type}:\${id}\` : String(id)`.
+### Refactor the code so that:
+ - Each task has a unique, stable id.
+ - Use this id as the key instead of the index.
+ - After shuffling, typed input should stay tied to the correct task.
 
 **Where to implement:** `./src/solution.js`  
 **How to verify:** `npm run test:unit4`

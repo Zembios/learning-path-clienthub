@@ -14,7 +14,7 @@ useEffect(() => {
 ---
 
 ## Topic Task — **Poller**
-Create a component that starts a `setInterval` calling a `tick` prop every `ms` milliseconds. Clean it up on unmount and when `ms` changes.
+This topic doesn't have a task for implementation. Instead, inside src/solution.jsx there is an example of setting up and clearing data polling.
 
 **Where to implement:** `./src/solution.jsx`  
 **How to verify:** `npm run test:unit4`
