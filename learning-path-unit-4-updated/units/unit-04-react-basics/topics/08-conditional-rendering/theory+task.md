@@ -23,4 +23,3 @@ Conditionally showing/hiding content is a core UI skill.
 This topic doesn't have a task for implementation. You can check out a practical example of conditional rendering in the solution.jsx file.
 
 **Where to implement:** `./src/solution.jsx`  
-**How to verify:** `npm run test:unit4`
