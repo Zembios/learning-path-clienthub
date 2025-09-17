@@ -57,25 +57,79 @@ MUI offers accessible, styled components out of the box.
 </Box>
 ```
 
+# Task — User Profile Form (Formik + Yup + MUI)
+
+## Goal
+Build a **User Profile Form** using **Formik**, **Yup**, and **Material UI**.  
+The form should be structured into three sections and validated with Yup.
+
 ---
 
-## Unit Task – “Profile Settings Panel”
+## Sections & Fields
 
-Implement `ProfileSettings` in `./src/task/ProfileSettings.jsx`:
-- Render a heading with **Typography**: “Profile Settings”.
-- Render controlled inputs:
-  - **TextField** `Name`
-  - **Select** `Role` (use `native` prop; options from `roles` prop)
-  - **Autocomplete** `City` (options from `cities` prop; start with `defaultCity`)
-- Use a **Box** container with responsive padding and a conditional background via `sx` based on a boolean `highlight` prop.
-- Add a **Button** “Save” that calls `onSave({ name, role, city })` with the current values.
+### 1. Account
+- **email** — `<TextField />`
+- **password** — `<TextField type="password" />`
 
-**Props**: `{ roles: string[], cities: string[], defaultCity?: string, highlight?: boolean, onSave: (payload) => void }`
+### 2. Profile
+- **firstName** — `<TextField />`
+- **lastName** — `<TextField />`
+- **age** — `<TextField />` (numeric)
+- **country** — `<Select />`
 
-Run: `npm run test:unit8`
+### 3. Preferences
+- **lobbyStyle** — `<Select />`
+- **newsletterConsent** — `<Switch />`
+- **theme** — `<ToggleButtonGroup />`
 
-### Example Data
-```js
-const roles = ["Admin", "User", "Guest"];
-const cities = ["Sofia", "Plovdiv", "Varna"];
-```
+---
+
+## Requirements
+
+1. **Formik Setup**
+   - Initialize a form using `useFormik`.
+   - Provide `initialValues` shaped exactly as the model:
+     ```js
+     {
+       account: { email: "", password: "" },
+       profile: { firstName: "", lastName: "", age: "", country: "" },
+       preferences: { lobbyStyle: "", newsletterConsent: false, theme: "light" }
+     }
+     ```
+
+2. **Validation (Yup)**
+   - `account.email`: required, valid email  
+   - `account.password`: required, min 8 characters  
+   - `profile.firstName`: required  
+   - `profile.lastName`: required  
+   - `profile.age`: required, integer, ≥ 13  
+   - `profile.country`: required (one of the provided country options)  
+   - `preferences.lobbyStyle`: required (one of the provided lobby styles)  
+   - `preferences.newsletterConsent`: boolean  
+   - `preferences.theme`: required (one of `light`, `dark`, `system`)  
+
+3. **Error Handling**
+   - Display validation errors below each field using Formik’s `touched` and `errors`.
+
+4. **Form Actions**
+   - Add **Reset** and **Submit** buttons.
+   - On submit, log the form values to the console.
+
+---
+
+## Deliverables
+
+- A working form component (`App.jsx` or similar) that:
+  - Initializes Formik with nested initial values.
+  - Uses Yup for validation.
+  - Builds the form UI with the specified MUI components.
+  - Displays validation errors clearly.
+  - Handles submit and reset actions properly.
+
+---
+
+## Extra Notes
+- Use **dot-notation** with Formik for nested fields (e.g. `"profile.firstName"`).
+- For `<Select>`, `<Switch>`, and `<ToggleButtonGroup>`, remember to use `setFieldValue` and `setFieldTouched`.
+- Keep the key names exactly as specified (`newsletterConsent`, `lobbyStyle`, etc.).
+

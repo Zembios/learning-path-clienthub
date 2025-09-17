@@ -1,4 +1,4 @@
-# Unit 7 – Formik & Yup (Theory + Unit Task)
+# Unit 7 – Formik & Yup
 
 This unit covers: **useFormik initialization, tracking field values/touched/errors with MUI inputs, setFieldValue vs setValues, setFieldTouched, and Yup validation basics** (no async rules).
 
@@ -106,24 +106,5 @@ const schema = Yup.object({
 
 ---
 
-## Unit Task – “Account Signup Form”
-
-Implement `AccountForm` in `./src/task/AccountForm.jsx`:
-- Use **useFormik** with:
-  - `initialValues`: `{ email:"", password:"", age:18, lobbyStyle:"casual", termsAccepted:false }`
-  - `validationSchema`: using Yup (see above)
-  - `onSubmit(values)` prop (call it with the final values)
-- Render MUI inputs:
-  - **TextField** for `email`, `password`
-  - **TextField** for `age` (type=number)
-  - **Select** for `lobbyStyle` with options: `casual`, `ranked`
-  - **Checkbox** for `termsAccepted`
-- Use **touched + errors** to display field errors.
-- Use `setFieldValue` and `setFieldTouched` for `lobbyStyle` changes (as in the example you provided).
-
-Run: `npm run test:unit7`
-
-### Example valid values
-```js
-{ email: "a@b.com", password: "12345678", age: 18, lobbyStyle: "casual", termsAccepted: true }
-```
+## Unit Task
+The unit task is a combined one for both unit 7 and unit 8. You will find it under `unit-08-mui-essentials/theory+task.md`

@@ -1,4 +1,4 @@
-# Topic: MUI Errors & Touched — `FieldWithError`
+# Topic: MUI Errors & Touched
 
 ## Concise Theory
 Tie value, onChange, onBlur, and touched/errors into MUI components to show built-in error UI.
@@ -33,10 +33,4 @@ Tie value, onChange, onBlur, and touched/errors into MUI components to show buil
 
 ---
 
-## Topic Task — **FieldWithError**
-Create a component that renders a MUI `<TextField>` given props:
-`{ name, label, value, touched, errorText, onChange }`
-Show error when `touched` and `errorText` are truthy.
-
-**Where to implement:** `./src/solution.jsx`  
-**How to verify:** `npm run test:unit7`
+## Topic Task

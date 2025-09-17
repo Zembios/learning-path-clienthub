@@ -1,4 +1,4 @@
-# Topic: Yup Validation Basics (Detailed) — `buildRegistrationSchema()`
+# Topic: Yup Validation Basics (Detailed)
 
 ## Concise Theory
 Model a realistic account form with nested objects and conditional rules.
@@ -30,10 +30,3 @@ const schema = Yup.object({
   }),
 });
 ```
----
-
-## Topic Task — **buildRegistrationSchema()**
-Return a Yup object schema covering the above rules.
-
-**Where to implement:** `./src/solution.js`  
-**How to verify:** `npm run test:unit7`

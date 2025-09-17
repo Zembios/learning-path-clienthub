@@ -1,4 +1,4 @@
-# Topic: useFormik Initialization — `makeInitialValues()`
+# Topic: useFormik Initialization
 
 ## Concise Theory
 Define `initialValues`, `validationSchema` (Yup), and `onSubmit`.
@@ -26,10 +26,3 @@ const formik = useFormik({
   },
 });
 ```
-
----
-
-## Topic Task — **makeInitialValues()**
-
-**Where to implement:** `./src/solution.js`  
-**How to verify:** `npm run test:unit7`
