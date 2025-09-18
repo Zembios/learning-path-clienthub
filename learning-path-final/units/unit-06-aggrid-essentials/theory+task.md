@@ -1,4 +1,4 @@
-# Unit 6 – AgGrid Essentials (Theory + Unit Task)
+# Unit 6 – AgGrid Essentials
 
 This unit covers: **`colDefs` (renderers, formatters, styles), `defaultColDef`, and `gridOptions` (sorting/filtering/resizing, selection, `onGridReady`).**  
 You’ll practice composing **column definitions** and **grid options** for a realistic product/status dataset.
@@ -60,5 +60,5 @@ In React, for complex visual cells you can use framework components (React compo
 ---
 
 ## Unit Task
-Follow the guide through the different steps which explore the features that AgGrid provides:
+Follow the guide through AgGrid's features. Each section has a code preview and a sandbox that you can tinker with.
 https://www.ag-grid.com/react-data-grid/deep-dive/

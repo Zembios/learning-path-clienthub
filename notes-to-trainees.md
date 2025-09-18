@@ -5,7 +5,7 @@ All theory is written in markdown and there are plenty of markdown visualizers/p
 You can use this React sandbox for your convenience:
 https://codesandbox.io/s/react-new
 
-You will probably have to import different hooks from React manually. For example:
+You will probably have to import different native hooks from React manually. For example:
 ```jsx
 import { useState } from 'react';
 ```
