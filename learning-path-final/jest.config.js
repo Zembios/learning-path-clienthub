@@ -6,5 +6,7 @@ module.exports = {
     "^.+\\.(js|jsx)$": "babel-jest",
     "^.+\\.(ts|tsx)$": ["ts-jest", { tsconfig: "tsconfig.json" }]
   },
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"]
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+  moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
+  testPathIgnorePatterns: ["/node_modules/", "/.git/"]
 };

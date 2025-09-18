@@ -4,8 +4,7 @@
 import React from "react";
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import "@testing-library/jest-dom/extend-expect";
-import KeysExample from "./solution.jsx";
+import KeysExample from "../src/solution.jsx";
 
 /**
  * This test verifies PROPER key usage (stable ids).

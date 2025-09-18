@@ -8,8 +8,6 @@
     "test:unit3": "jest units/unit-03-typescript-foundations",
     "test:unit4": "jest units/unit-04-react-basics",
     "test:unit5": "jest units/unit-05-react-advanced",
-    "test:unit6": "jest units/unit-06-aggrid-essentials",
-    "test:unit7": "jest units/unit-07-formik-yup",
     "test:unit8": "jest units/unit-08-mui-essentials",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
