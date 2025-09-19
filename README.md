@@ -3,11 +3,18 @@ Welcome! This is the full multi-unit learning path with concise theory, single-f
 
 ## Quick Start
 ```bash
-npm i
+# Install dependencies
+npm install
+
+# Run all tests
+npm test
+
 # Run a specific unit
 npm run test:unit1
-# Or run everything
-npm test
+
+# Or run specific test
+npm test units/unit-01-js-foundations/topics/01-primitives/tests/task.spec.js
+
 # (TypeScript checks for Unit 3 as well)
 npm run typecheck
 ```
