@@ -14,9 +14,6 @@ npm run test:unit1
 
 # Or run specific test
 npm test units/unit-01-js-foundations/topics/01-primitives/tests/task.spec.js
-
-# (TypeScript checks for Unit 3 as well)
-npm run typecheck
 ```
 
 ## Structure

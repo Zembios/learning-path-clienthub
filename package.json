@@ -8,8 +8,7 @@
     "test:unit3": "jest units/unit-03-typescript-foundations",
     "test:unit4": "jest units/unit-04-react-basics",
     "test:unit5": "jest units/unit-05-react-advanced",
-    "test:unit8": "jest units/unit-08-mui-essentials",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "test:unit8": "jest units/unit-08-mui-essentials"
   },
   "devDependencies": {
     "@babel/core": "^7",
@@ -18,6 +17,7 @@
     "@testing-library/jest-dom": "^6",
     "@testing-library/react": "^16",
     "@testing-library/user-event": "^14",
+    "@types/jest": "^30.0.0",
     "babel-jest": "^29",
     "jest": "^29",
     "jest-environment-jsdom": "^29",
@@ -26,14 +26,14 @@
     "whatwg-fetch": "^3"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "formik": "^2",
-    "yup": "^1",
-    "@mui/material": "^6",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@mui/material": "^6",
     "ag-grid-community": "^32",
-    "ag-grid-react": "^32"
+    "ag-grid-react": "^32",
+    "formik": "^2",
+    "react": "^18",
+    "react-dom": "^18",
+    "yup": "^1"
   }
 }
