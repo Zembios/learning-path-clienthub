@@ -9,48 +9,48 @@ These are the compact, practical notes that match our learning path. Each topic 
 ### Primitives
 Atomic, immutable values copied **by value**. Know: `string`, `number`, `boolean`, `undefined`, `null`, `bigint`, `symbol`.
 ```js
-let s="hi", n=42, b=true, u, x=null, big=2n**63n, sym=Symbol("id");
+let s = "hi", n = 42, b = true, u, x = null, big = 2n**63n, sym = Symbol("id");
 ```
 
 ### `typeof`
 Quick runtime type check; returns a **string**. Remember the classic quirks.
 ```js
-typeof "hi"   // "string"
-typeof 42     // "number"  (NaN is also "number")
-typeof null   // "object"  (legacy quirk)
+typeof "hi"       // "string"
+typeof 42         // "number"  (NaN is also "number")
+typeof null       // "object"  (legacy quirk)
 Array.isArray([]) // true
 ```
 
 ### References vs Values
 Objects/arrays/functions are **references**; two variables can point to the **same** object.
 ```js
-const a={x:1}; 
-const b=a; 
-b.x=9; 
+const a = { x: 1 }; 
+const b = a; 
+b.x = 9; 
 console.log(a.x); // 9
 ```
 
 ### Type Coercion (be explicit)
 JS may convert types implicitly. Prefer `===` and explicit casts.
 ```js
-"5"+2             // "52"
-"5"-2             // 3
-0 == false        // true  |  0 === false // false
-null == undefined // true
-+""               // 0, +"x" // NaN
+"5" + 2             // "52"
+"5" - 2             // 3
+0 == false          // true  |  0 === false // false
+null == undefined   // true
++""                 // 0, +"x" // NaN
 ```
 
 ### Template Literals
 String interpolation with backticks.
 ```js
-const name="Pesho"; 
+const name = "Pesho"; 
 console.log(`Hello, ${name}!`) // Hello, Pesho!;
 ```
 
 ### Default Parameters
 Give safe defaults to avoid `undefined` checks.
 ```js
-function greet (name="stranger") { 
+function greet (name = "stranger") { 
   return `Hi ${name}`; 
 }
 ```
@@ -58,29 +58,29 @@ function greet (name="stranger") {
 ### Rest & Spread
 **Rest** gathers args; **spread** expands arrays/objects. Commonly used for component props.
 ```js
-function sum(...nums){ return nums.reduce((s,n)=>s+n,0); }
-const a=[1,2], b=[...a,3];              // array spread
-const base={id:1,name:"Pesho"}, ui={...base, role:"admin"}; // object spread
+function sum(...nums){ return nums.reduce((s, n) => s + n, 0); }
+const a=[1, 2], b=[...a, 3];              // array spread
+const base={ id: 1, name: "Pesho" }, ui={...base, role:"admin"}; // object spread
 // <UserCard {...ui} /> // mental model in React
 ```
 
 ### Object/Array Destructuring
 Pull out fields quickly and clearly.
 ```js
-const user={name:"Pesho", age:25}; const { name } = user; console.log(name); // "Pesho"
-const arr=[10,20]; const [first, second]=arr; console.log(first, second);    // 10 20
+const user = {name: "Pesho", age: 25}; const { name } = user; console.log(name); // "Pesho"
+const arr = [10,20]; const [first, second] = arr; console.log(first, second);    // 10 20
 ```
 
 ### Property & Method Shorthands
 Less boilerplate when keys equal variable names; concise methods.
 ```js
-const nameVar="Pesho"; const person={ nameVar, greet(){ return "Hi"; } };
+const nameVar = "Pesho"; const person = { nameVar, greet(){ return "Hi"; } };
 ```
 
 ### Arrow & Anonymous Functions
 Concise functions; lexical `this`.
 ```js
-const add = (a,b)=>a+b; add(2,3); // 5
+const add = (a, b) => a + b; add(2, 3); // 5
 ```
 
 ### Hoisting (and why we use `let`/`const`)
@@ -94,9 +94,9 @@ let y; console.log(y); // ReferenceError if accessed before declaration
 ### map / filter / reduce
 Workhorse array ops: **map** transforms, **filter** keeps, **reduce** folds into one value.
 ```js
-[1,2,3].map(n=>n*2);          // [2,4,6]
-[1,2,3].filter(n=>n>1);       // [2,3]
-[1,2,3].reduce((s,n)=>s+n,0); // 6
+[1,2,3].map(n => n * 2);          // [2,4,6]
+[1,2,3].filter(n => n > 1);       // [2,3]
+[1,2,3].reduce((s, n) => s + n, 0); // 6
 ```
 
 ---
@@ -126,7 +126,7 @@ Organize code with `export` / `import`.
 ```js
 // math.js
 export const PI = 3.14;
-export default function add(a,b){ return a+b; }
+export default function add(a,b){ return a + b; }
 
 // consumer.js
 import add, { PI } from "./math.js";
@@ -150,13 +150,13 @@ interface Product { id: string; price: number }
 Unions model **one-of**; intersections combine shapes.
 ```ts
 type Status = "pending" | "completed" | "canceled";
-type Point = { x:number } & { y:number }; // { x, y }
+type Point = { x: number } & { y: number }; // { x, y }
 ```
 
 ### Utility Types
 Powerful helpers to reshape types.
 ```ts
-type Order = { id:string; status:"pending"|"completed"|"canceled"; total:number };
+type Order = { id: string; status: "pending" | "completed" | "canceled"; total: number };
 
 type P = Partial<Order>;             // all keys optional
 type Prev = Pick<Order,"id"|"status">; // only id+status remain
@@ -166,10 +166,13 @@ type Frozen = Readonly<Order>;       // props read-only (compile-time)
 ```
 
 ### Generics
-Keep type info intact.
+Write reusable code that preserves type info.
 ```ts
-function identity<T>(x:T):T { return x; }
-function groupBy<T,K extends string|number>(arr:T[], key:(t:T)=>K): Record<K,T[]> { /* ... */ }
+function identity<T>(value: T): T {
+  return value;
+}
+const n = identity(5);       // T inferred as number
+const s = identity<string>("x");
 ```
 
 ### Literal Types
@@ -192,14 +195,14 @@ function Panel({ title, children }){ return <section><h3>{title}</h3>{children}<
 ### `useState`
 Local state triggers re-renders on update.
 ```jsx
-const [value,setValue]=useState("");
+const [value, setValue] = useState("");
 ```
 
 ### Controlled vs Uncontrolled (implicit pitfalls)
 Controlled inputs bind `value` to state + `onChange`. If `value` is initially **undefined**, React treats it as **uncontrolled** and later switching to controlled causes warnings/bugs. Initialize text inputs with `""` (and suitable defaults for others).
 ```jsx
-const [name,setName]=useState(""); // stays controlled
-<input value={name} onChange={e=>setName(e.target.value)} />
+const [name, setName] = useState(""); // stays controlled
+<input value={name} onChange={e => setName(e.target.value)} />
 ```
 
 ### Conditional Rendering & **Unique Keys**
@@ -214,7 +217,7 @@ React diffs a new Virtual DOM against the previous to update only what changed. 
 useEffect(()=>{
   console.log("mounted");
   return ()=> console.log("unmounted");
-},[]);
+}, []);
 ```
 
 ---
@@ -224,33 +227,33 @@ useEffect(()=>{
 ### `useEffect` with Cleanup (polling)
 Start intervals/subscriptions and clear them in the cleanup.
 ```jsx
-useEffect(()=>{ const id=setInterval(tick, ms); return ()=>clearInterval(id); },[ms]);
+useEffect(() => { const id = setInterval(tick, ms); return () => clearInterval(id); }, [ms]);
 ```
 
 ### `useMemo` (derived data)
 Compute expensive/derived values only when deps change.
 ```jsx
-const total = useMemo(()=> items.reduce((s,i)=>s+i.value,0), [items]);
+const total = useMemo(() => items.reduce((s, i) => s + i.value, 0), [items]);
 ```
 
 ### `useCallback` (stable callbacks for children)
 Pass stable function identities to memoized children.
 ```jsx
-const onInc = useCallback(()=> setCount(c=>c+1), []);
-const Child = React.memo(({ onInc })=> <button onClick={onInc}>+</button>);
+const onInc = useCallback(() => setCount(c => c + 1), []);
+const Child = React.memo(({ onInc }) => <button onClick={onInc}>+</button>);
 ```
 
 ### `useRef` (DOM & instance data)
 Mutable box that persists across renders; doesn’t trigger renders. Useful for focusing, previous values, or third‑party APIs (e.g., AG Grid).
 ```jsx
 const inputRef = useRef(null);
-useEffect(()=>{ inputRef.current?.focus(); },[]);
+useEffect(() => { inputRef.current?.focus(); }, []);
 ```
 
 ### Custom Hooks
 Extract reusable stateful logic.
 ```jsx
-function useToggle(initial=false){ const [on,setOn]=useState(initial); const toggle=useCallback(()=>setOn(o=>!o),[]); return [on,toggle]; }
+function useToggle(initial = false){ const [on, setOn] = useState(initial); const toggle = useCallback(() => setOn(o => !o), []); return [on, toggle]; }
 ```
 
 ### Higher‑Order Components (HOC)
@@ -267,11 +270,11 @@ const withLoading = (Wrapped) => (props) => props.loading ? <span>Loading...</sp
 Configure how fields display: headers, formatters, renderers, and styles.
 ```js
 const colDefs=[
-  { field:"name", headerName:"Product", flex:1, cellRenderer:v=>`<strong>${v}</strong>` },
-  { field:"price", headerName:"Price", valueFormatter:v=>`€${Number(v).toFixed(2)}` },
-  { field:"status", headerName:"Status",
-    cellRenderer: p=>`<span class='status status-${p.value}'>${String(p.value).toUpperCase()}</span>`,
-    cellStyle: p=>({ color: p.value==="completed"?"green":p.value==="canceled"?"red":"gray" })
+  { field: "name", headerName: "Product", flex: 1, cellRenderer: v => `<strong>${v}</strong>` },
+  { field: "price", headerName: "Price", valueFormatter: v => `€${Number(v).toFixed(2)}` },
+  { field: "status", headerName: "Status",
+    cellRenderer: p => `<span class='status status-${p.value}'>${String(p.value).toUpperCase()}</span>`,
+    cellStyle: p => ({ color: p.value === "completed" ? "green" : p.value === "canceled" ? "red" : "gray" })
   }
 ];
 ```
@@ -279,14 +282,14 @@ const colDefs=[
 ### `defaultColDef` & Common Options
 Share defaults once; keep columns terse.
 ```js
-const defaultColDef={ sortable:true, filter:true, resizable:true };
+const defaultColDef={ sortable: true, filter: true, resizable: true };
 ```
 
 ### `gridOptions`
 Wire columns and global features (selection, pagination, lifecycle).
 ```js
-const gridOptions={ columnDefs: colDefs, defaultColDef, rowSelection:"single", pagination:true, paginationPageSize:20,
-  onGridReady:(params)=> params.api.sizeColumnsToFit()
+const gridOptions={ columnDefs: colDefs, defaultColDef, rowSelection: "single", pagination: true, paginationPageSize: 20,
+  onGridReady: (params) => params.api.sizeColumnsToFit()
 };
 ```
 
@@ -297,14 +300,14 @@ const gridOptions={ columnDefs: colDefs, defaultColDef, rowSelection:"single", p
 ### `useFormik` Initialization
 Define `initialValues`, `validationSchema` (Yup), and `onSubmit`.
 ```jsx
-const formik = useFormik({ initialValues:{email:"",password:"",age:18,lobbyStyle:"casual",termsAccepted:false}, validationSchema: schema, onSubmit: submit });
+const formik = useFormik({ initialValues: { email: "", password: "", age: 18, lobbyStyle: "casual", termsAccepted: false }, validationSchema: schema, onSubmit: submit });
 ```
 
 ### Tracking Fields & Errors (MUI)
 Show errors after touch; keep inputs **controlled**.
 ```jsx
 <TextField name="email" value={formik.values.email} onChange={formik.handleChange}
-  onBlur={()=>formik.setFieldTouched("email",true,false)}
+  onBlur={() => formik.setFieldTouched("email",true,false)}
   error={Boolean(formik.touched.email && formik.errors.email)}
   helperText={formik.touched.email && formik.errors.email} />
 ```
@@ -339,7 +342,7 @@ Build UIs with accessible building blocks.
   <Typography variant="h5">Title</Typography>
   <TextField label="Name" />
   <Select native defaultValue="User"><option>User</option></Select>
-  <Autocomplete options={["Sofia","Plovdiv"]} renderInput={p=><TextField {...p} label="City" />} />
+  <Autocomplete options={["Sofia","Plovdiv"]} renderInput={p => <TextField {...p} label="City" />} />
   <Button variant="contained">Save</Button>
 </Box>
 ```
@@ -347,7 +350,7 @@ Build UIs with accessible building blocks.
 ### `sx` Styling (Responsive & Conditional)
 Responsive breakpoint values and state-driven styles in one place.
 ```jsx
-<Box sx={{ p:{ xs:1, md:3 }, bgcolor: active ? "primary.main" : "grey.100" }} />
+<Box sx={{ p:{ xs: 1, md: 3 }, bgcolor: active ? "primary.main" : "grey.100" }} />
 ```
 
 ---
