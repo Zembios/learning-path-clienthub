@@ -39,7 +39,7 @@ learning-path/
 ```
 
 ## Convenient theory display
-All theory is written in markdown and there are plenty of markdown visualizers/previewers available. In fact, VS Code has a built-in md previewer (`Ctrl+K V` to preview when viewing a md file).
+All theory is written in markdown and there are plenty of markdown visualizers/previewers available. In fact, VS Code has a built-in md previewer (`Ctrl+K V` to preview when viewing a md file OR right-click -> Open Preview on any md file).
 
 ## React Tasks
 You can use this React sandbox for your convenience:
